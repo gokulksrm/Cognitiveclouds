@@ -1,0 +1,28 @@
+Employee schema
+
+employee table:
+id
+name
+email
+age
+salary
+
+department table
+
+id
+department_name
+emp_id
+
+inner join
+
+select e.name,e.email,e.age,e.salary,d.department_name from employee e INNER JOIN department d ON e.id=d.emp_id;
+
+outer join 
+
+select e.name,e.email,e.age,e.salary,d.department_name from employee e OUTER JOIN department d ON e.id=d.emp_id;
+
+sub queries
+
+select name,salary from employee where id in ( select emp_id from department where department_name='IT');
+
+select count(distinct(emp_id) from department
